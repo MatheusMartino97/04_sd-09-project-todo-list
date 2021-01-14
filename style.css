@@ -1,9 +1,47 @@
+body {
+  background-color: rgb(245, 222, 179);
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.all-content {
+  padding: 20px;
+}
+
+.flex-control {
+  padding: 20px;
+  background-color: rgb(125, 150, 106);
+  border: 5px inset;
+  border-style: ridge;
+}
+
+header {
+  text-align: center;
+}
+
+input.input {
+  width: 75%;
+}
+
+button#criar-tarefa {
+  width: 24%;
+}
+
+li {
+  border-radius: 10px 5px 5px 10px;
+  padding: 5px;
+}
+
 li , button {
   cursor: pointer;
 }
 
 .selected {
-  background-color: gray;
+  background-color: rgba(128, 128, 128, 0.534);
 }
 
 .completed {

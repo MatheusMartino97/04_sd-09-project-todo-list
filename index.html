@@ -6,37 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
 
+    <link rel="stylesheet" href="bulma.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <h1>Minha Lista de Tarefas</h1>
+    <div class="flex all-content">
+        <div class="flex-control">
+            <div class="field">
+                <div class="control">
+                    <header>
+                        <h1 class="title">Lista de Tarefas</h1>
+                
+                        <p class="subtitle" id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+                    </header>
+                </div>
+            </div>
+            
+            <div class="field">
+                <div class="control">
+                    <main>
+                        <div class="field">
+                            <div class="control">
+                                <section id="input-container flex">
+                                    <input class="input" type="text" id="texto-tarefa" placeholder="Adicione uma tarefa">
+                        
+                                    <button class="button is-primary is-light" id="criar-tarefa">Adicionar</button>
+                                </section>
+                            </div>
+                        </div>
+                
+                        <div class="field">
+                            <div class="control">
+                                <section id="list-container" class="content">
+                                    <ol type="I" id="lista-tarefas">
+                                    </ol>
+                                </section>
+                            </div>
+                        </div>
+                
+                        <div class="field">
+                            <div class="control">
+                                <section id="buttons-container">
+                                    <button class="button is-warning is-rounded" id="remover-selecionado">✘</button>
+                                    <button class="button is-info is-rounded" id="mover-cima">▲</button>
+                                    <button class="button is-info is-rounded" id="mover-baixo">▼</button>
+                                    <button class="button is-warning is-rounded" id='remover-finalizados'>Remover Finalizados</button>
+                                    <button class="button is-danger is-rounded" id="apaga-tudo">Limpar Lista</button>
+                                    <button class="button is-success is-rounded is-light" id="salvar-tarefas">Salvar</button>
+                                </section>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-    </header>
 
-    <main>
-        <section id="input-container">
-            <input type="text" id="texto-tarefa">
-
-            <button id="criar-tarefa">Adicionar</button>
-        </section>
-
-        <section id="list-container">
-            <ol id="lista-tarefas">
-            </ol>
-        </section>
-
-        <section id="buttons-container">
-            <button id="remover-selecionado">✘</button>
-            <button id="mover-cima">▲</button>
-            <button id="mover-baixo">▼</button>
-            <button id='remover-finalizados'>Remover Finalizados</button>
-            <button id="apaga-tudo">Limpar Lista</button>
-            <button id="salvar-tarefas">Salvar</button>
-        </section>
-    </main>
+    
 
     <script src="script.js"></script>
 </body>

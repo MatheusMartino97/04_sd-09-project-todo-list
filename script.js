@@ -15,6 +15,7 @@ window.onload = () => {
 
       listaTarefasOrderedList.appendChild(listItem);
     }
+    removeSelectedClass()
   }
 };
 
@@ -25,13 +26,15 @@ function clearTextoTarefaValue() {
 }
 
 function addTask() {
-  const textoTarefaImput = document.querySelector('#texto-tarefa');
+  const textoTarefaInput = document.querySelector('#texto-tarefa');
   const listItem = document.createElement('li');
+    
+  if (textoTarefaInput.value) {
+    listItem.innerText = textoTarefaInput.value;
+    listaTarefasOrderedList.appendChild(listItem);
 
-  listItem.innerText = textoTarefaImput.value;
-  listaTarefasOrderedList.appendChild(listItem);
-
-  clearTextoTarefaValue();
+    clearTextoTarefaValue();
+  }
 }
 
 function listenToCriarTarefaButton() {
