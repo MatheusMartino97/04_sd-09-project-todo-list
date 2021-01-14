@@ -166,6 +166,8 @@ function moveTheTaskUp() {
       listItemNodeList[i].className = listItemNodeList[i - 1].className;
       listItemNodeList[i - 1].innerText = tempInnerText;
       listItemNodeList[i - 1].className = tempClassName;
+
+      break
     }
   }
 }
