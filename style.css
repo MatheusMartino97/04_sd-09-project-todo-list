@@ -1,3 +1,7 @@
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   height: 100vh;
   background-color: rgb(125, 150, 106);
@@ -49,6 +53,10 @@ main.flex-container {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+}
+
+.top-section::-webkit-scrollbar {
+  display: none;
 }
 
 #list-container {
