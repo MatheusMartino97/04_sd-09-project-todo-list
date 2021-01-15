@@ -1,55 +1,84 @@
 body {
-  background-color: rgb(245, 222, 179);
   height: 100vh;
-}
-
-.flex {
-  display: flex;
-  justify-content: center;
-}
-
-.all-content {
-  padding: 20px;
-  height: 100vh;
-}
-
-#list-container {
-  max-height: 162px;
-  overflow-y: scroll;
-}
-
-.flex-control {
-  padding: 20px;
   background-color: rgb(125, 150, 106);
-  border: 5px inset;
-  border-style: ridge;
 }
 
-header {
-  text-align: center;
-}
-
-input.input {
-  width: 75%;
-}
-
-button#criar-tarefa {
-  width: 24%;
-}
-
-li {
-  border-radius: 10px 5px 5px 10px;
-  padding: 5px;
-}
-
-li , button {
+li,
+button {
   cursor: pointer;
 }
 
+li {
+  border-radius: 10px 0 0 10px;
+  padding: 5px;
+}
+
 .selected {
-  background-color: rgba(128, 128, 128, 0.534);
+  background-color: rgb(128, 128, 128);
 }
 
 .completed {
   text-decoration: line-through solid black;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: none;
+}
+
+.add-save {
+  display: flex;
+}
+
+.add-save button {
+  flex-grow: 1;
+}
+
+main.flex-container {
+  justify-content: space-between;
+  height: inherit;
+}
+
+.top-section {
+  flex-grow: 1;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+#list-container {
+  flex-grow: 1;
+
+  overflow-y: scroll;
+}
+
+.line-flex {
+  display: flex;
+  margin: 5px 0;
+}
+
+#mover-cima,
+#mover-baixo {
+  width: 20em;
+}
+
+#apaga-tudo {
+  width: 80em;
+}
+
+#remover-finalizados {
+  width: 70em;
+}
+
+#remover-selecionado {
+  flex-basis: 10em;
+}
+
+hr {
+  margin: 10px;
 }
