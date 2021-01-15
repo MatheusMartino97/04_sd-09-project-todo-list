@@ -95,10 +95,15 @@ listenToRemoverSelecionadoButton();
 
 function clearOrderedList() {
   const listItemNodeList = document.querySelectorAll('#lista-tarefas li');
+  const verify = window.confirm('Tem certeza que deseja apagar todas as tarefas?')
 
-  for (let i = 0; i < listItemNodeList.length; i += 1) {
-    listaTarefasOrderedList.removeChild(listItemNodeList[i]);
+  if (verify === true) {
+    for (let i = 0; i < listItemNodeList.length; i += 1) {
+      listaTarefasOrderedList.removeChild(listItemNodeList[i]);
+    }
   }
+
+  
 }
 
 function listenToApagaTudoButton() {
@@ -134,17 +139,23 @@ listenToRemoverFinalizadosButton();
 function saveTasks() {
   const listItemNodeList = document.querySelectorAll('#lista-tarefas li');
   const tasksObjectsList = [];
+  const verify = window.confirm('Salvar a lista atual irá sobrescrever a lista salva anteriormente. Tem certeza que deseja realizar essa ação?')
 
-  for (let i = 0; i < listItemNodeList.length; i += 1) {
-    const taskObject = {
-      taskInnerText: listItemNodeList[i].innerText,
-      taskClassName: listItemNodeList[i].className,
-    };
-
-    tasksObjectsList.push(taskObject);
+  if (verify === true) {
+    for (let i = 0; i < listItemNodeList.length; i += 1) {
+      const taskObject = {
+        taskInnerText: listItemNodeList[i].innerText,
+        taskClassName: listItemNodeList[i].className,
+      };
+  
+      tasksObjectsList.push(taskObject);
+    }
+  
+    localStorage.setItem('taskList', JSON.stringify(tasksObjectsList));
+    window.alert('Lista salva com sucesso!')
   }
 
-  localStorage.setItem('taskList', JSON.stringify(tasksObjectsList));
+  
 }
 
 function listenToSalvarTarefasButton() {
