@@ -10,6 +10,12 @@ body {
 
 .all-content {
   padding: 20px;
+  height: 50vh;
+}
+
+#list-container {
+  max-height: 162px;
+  overflow-y: scroll;
 }
 
 .flex-control {

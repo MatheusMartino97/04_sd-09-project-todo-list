@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="bulma.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="small_screens.css" media="(max-width: 375px)">
 </head>
 
 <body>
@@ -23,34 +24,37 @@
                 </div>
             </div>
             
-            <div class="field">
-                <div class="control">
-                    <main>
-                        <div class="field">
-                            <div class="control">
-                                <section id="input-container flex">
-                                    <input class="input" type="text" id="texto-tarefa" placeholder="Adicione uma tarefa">
+            <div class="field big">
+                <div class="control big">
+                    <main class="big">
                         
-                                    <button class="button is-primary is-light" id="criar-tarefa">Adicionar</button>
-                                </section>
+                            <div class="field">
+                                <div class="control">
+                                    <section id="input-container flex">
+                                        <input class="input" type="text" id="texto-tarefa" placeholder="Adicione uma tarefa">
+                            
+                                        <button class="button is-primary is-light" id="criar-tarefa">Adicionar</button>
+                                    </section>
+                                </div>
                             </div>
-                        </div>
-                
-                        <div class="field">
-                            <div class="control">
-                                <section id="list-container" class="content">
-                                    <ol type="I" id="lista-tarefas">
-                                    </ol>
-                                </section>
+                    
+                            <div class="field">
+                                <div class="control">
+                                    <section id="list-container" class="content">
+                                        <ol type="I" id="lista-tarefas">
+                                        </ol>
+                                    </section>
+                                </div>
                             </div>
-                        </div>
+                        
+                        
                 
-                        <div class="field">
+                        <div class="field" id="flex-end">
                             <div class="control">
                                 <section id="buttons-container">
-                                    <button class="button is-warning is-rounded" id="remover-selecionado">✘</button>
                                     <button class="button is-info is-rounded" id="mover-cima">▲</button>
                                     <button class="button is-info is-rounded" id="mover-baixo">▼</button>
+                                    <button class="button is-warning is-rounded" id="remover-selecionado">✘</button>
                                     <button class="button is-warning is-rounded" id='remover-finalizados'>Remover Finalizados</button>
                                     <button class="button is-danger is-rounded" id="apaga-tudo">Limpar Lista</button>
                                     <button class="button is-success is-rounded is-light" id="salvar-tarefas">Salvar</button>

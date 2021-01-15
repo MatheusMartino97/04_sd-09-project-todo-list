@@ -1,0 +1,57 @@
+.all-content {
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+#input-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#list-container {
+    max-height: 186px;
+    overflow: scroll;
+}
+
+button#criar-tarefa, input#texto-tarefa {
+    width: 100%;
+}
+
+.big {
+    height: inherit;
+}
+
+header {
+    display: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#buttons-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    align-self: flex-end;
+}
+
+.flex-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+main div:nth-child(3) {
+    justify-self: flex-end;
+}
+
+button {
+    margin-top: 1px;
+}
+
