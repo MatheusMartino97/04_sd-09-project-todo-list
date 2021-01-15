@@ -75,7 +75,8 @@ function removeSelected() {
   for (let i = 0; i < listItemNodeList.length; i += 1) {
     if (
       listItemNodeList[i].className === 'selected' ||
-      listItemNodeList[i].className === 'completed selected'
+      listItemNodeList[i].className === 'completed selected' ||
+      listItemNodeList[i].className === 'selected completed'
     ) {
       listaTarefasOrderedList.removeChild(listItemNodeList[i]);
     }
