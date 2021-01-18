@@ -90,3 +90,7 @@ main.flex-container {
 hr {
   margin: 10px;
 }
+
+.input-and-load {
+  display: flex;
+}

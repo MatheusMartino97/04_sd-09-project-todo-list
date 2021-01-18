@@ -1,6 +1,8 @@
 const listaTarefasOrderedList = document.querySelector('#lista-tarefas');
 
-window.onload = () => {
+function loadSavedList () {
+  clearOrderedList()
+
   const tasksObjectsList = JSON.parse(localStorage.getItem('taskList'));
 
   if (
@@ -15,9 +17,12 @@ window.onload = () => {
 
       listaTarefasOrderedList.appendChild(listItem);
     }
-    removeSelectedClass()
   }
-};
+
+  removeSelectedClass()
+}
+
+window.onload = loadSavedList
 
 function clearTextoTarefaValue() {
   const textoTarefaImput = document.querySelector('#texto-tarefa');
@@ -95,21 +100,24 @@ listenToRemoverSelecionadoButton();
 
 function clearOrderedList() {
   const listItemNodeList = document.querySelectorAll('#lista-tarefas li');
-  const verify = window.confirm('Tem certeza que deseja apagar todas as tarefas?')
 
-  if (verify === true) {
     for (let i = 0; i < listItemNodeList.length; i += 1) {
       listaTarefasOrderedList.removeChild(listItemNodeList[i]);
     }
-  }
+}
 
-  
+function verifyClearOrderedList () {
+  const verify = window.confirm('Tem certeza que deseja apagar todas as tarefas?')
+
+  if (verify === true) {
+    clearOrderedList()
+  }
 }
 
 function listenToApagaTudoButton() {
   const apagaTudoButton = document.querySelector('#apaga-tudo');
 
-  apagaTudoButton.addEventListener('click', clearOrderedList);
+  apagaTudoButton.addEventListener('click', verifyClearOrderedList);
 }
 
 listenToApagaTudoButton();
@@ -154,8 +162,6 @@ function saveTasks() {
     localStorage.setItem('taskList', JSON.stringify(tasksObjectsList));
     window.alert('Lista salva com sucesso!')
   }
-
-  
 }
 
 function listenToSalvarTarefasButton() {
@@ -217,3 +223,21 @@ function listenToMoverButtons() {
 }
 
 listenToMoverButtons();
+
+function confirmSavedList () {
+  const verify = window.confirm('Carregar a lista salva fará com que as tarefas não salvas sejam perdidas. Deseja continuar?')
+
+  if (verify === true) {
+    loadSavedList()
+
+    window.alert('Lista carregada com sucesso!')
+  }
+}
+
+function listenToLoadButtonButton () {
+  const loadButtonButton = document.querySelector('#load-button')
+
+  loadButtonButton.addEventListener('click', confirmSavedList)
+}
+
+listenToLoadButtonButton()
