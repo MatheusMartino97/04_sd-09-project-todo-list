@@ -61,6 +61,20 @@ function listenToCriarTarefaButton() {
 
 listenToCriarTarefaButton();
 
+function addTaskWithEnter(event) {
+  if (event.keyCode == 13) {
+    addTask()
+  }
+}
+
+function listenToTextoTarefaInput() {
+  const textoTarefaInput = document.querySelector('#texto-tarefa')
+
+  textoTarefaInput.addEventListener('keydown', addTaskWithEnter)
+}
+
+listenToTextoTarefaInput()
+
 function removeSelectedClass() {
   const listItemNodeList = document.querySelectorAll("#lista-tarefas li");
 
