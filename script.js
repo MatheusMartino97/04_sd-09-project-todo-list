@@ -1,5 +1,11 @@
 const listaTarefasOrderedList = document.querySelector('#lista-tarefas');
 
+function focusTextoTarefaInput() {
+  const textoTarefaInput = document.querySelector('#texto-tarefa');
+
+  textoTarefaInput.focus()
+}
+
 function loadSavedList () {
   clearOrderedList()
 
@@ -22,12 +28,15 @@ function loadSavedList () {
   removeSelectedClass()
 }
 
-window.onload = loadSavedList
+window.onload = () => {
+  loadSavedList()
+  focusTextoTarefaInput()
+}
 
 function clearTextoTarefaValue() {
-  const textoTarefaImput = document.querySelector('#texto-tarefa');
+  const textoTarefaInput = document.querySelector('#texto-tarefa');
 
-  textoTarefaImput.value = '';
+  textoTarefaInput.value = '';
 }
 
 function addTask() {
@@ -40,6 +49,8 @@ function addTask() {
 
     clearTextoTarefaValue();
   }
+
+  focusTextoTarefaInput()
 }
 
 function listenToCriarTarefaButton() {
@@ -60,6 +71,8 @@ function removeSelectedClass() {
 
 function addSelectedClass(event) {
   event.target.classList.add('selected');
+
+  focusTextoTarefaInput()
 }
 
 function toggleCompletedClass(event) {
@@ -86,6 +99,8 @@ function removeSelected() {
       listaTarefasOrderedList.removeChild(listItemNodeList[i]);
     }
   }
+
+  focusTextoTarefaInput()
 }
 
 function listenToRemoverSelecionadoButton() {
@@ -112,6 +127,8 @@ function verifyClearOrderedList () {
   if (verify === true) {
     clearOrderedList()
   }
+
+  focusTextoTarefaInput()
 }
 
 function listenToApagaTudoButton() {
@@ -132,6 +149,8 @@ function removeCompletedTasks() {
       listaTarefasOrderedList.removeChild(listItemNodeList[i]);
     }
   }
+
+  focusTextoTarefaInput()
 }
 
 function listenToRemoverFinalizadosButton() {
@@ -162,6 +181,8 @@ function saveTasks() {
     localStorage.setItem('taskList', JSON.stringify(tasksObjectsList));
     window.alert('Lista salva com sucesso!')
   }
+
+  focusTextoTarefaInput()
 }
 
 function listenToSalvarTarefasButton() {
@@ -191,6 +212,8 @@ function moveTheTaskUp() {
       break
     }
   }
+
+  focusTextoTarefaInput()
 }
 
 function moveTheTaskDown() {
@@ -212,6 +235,8 @@ function moveTheTaskDown() {
       break;
     }
   }
+
+  focusTextoTarefaInput()
 }
 
 function listenToMoverButtons() {
@@ -232,6 +257,8 @@ function confirmSavedList () {
 
     window.alert('Lista carregada com sucesso!')
   }
+
+  focusTextoTarefaInput()
 }
 
 function listenToLoadButtonButton () {
